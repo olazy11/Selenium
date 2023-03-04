@@ -13,8 +13,7 @@ public class WebOrderTask2 {
          * Get title and verify it is correct
          * logout
          * close the browser
-         */
-
+*/
         //tell your project where the webdriver is located.
 //        for mac user please do not use .exe with chromedriver
         System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
