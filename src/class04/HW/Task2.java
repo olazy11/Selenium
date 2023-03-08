@@ -19,12 +19,14 @@ public class Task2 {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://practice.syntaxtechs.net/basic-checkbox-demo.php");
-        List<WebElement> radioButtons = driver.findElements(By.cssSelector("input[class='cb1-element']"));
-        for (WebElement radioBtn : radioButtons) {
-            String options = radioBtn.getAttribute("value");
+
+        List<WebElement> checkButtons = driver.findElements(By.cssSelector("input[class='cb1-element']"));
+
+        for (WebElement checkBtn : checkButtons) {
+            String options = checkBtn.getAttribute("value");
             if (options.equalsIgnoreCase("Option-4")) {
-                radioBtn.click();
-Thread.sleep(2000);
+                checkBtn.click();
+                Thread.sleep(2000);
                 driver.quit();
             }
         }
