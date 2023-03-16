@@ -1,0 +1,3 @@
+ChromeOptions co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        ChromeDriver driver = new ChromeDriver(co);
