@@ -7,18 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.List;
 
-/*
-1.goto http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login
-
-username=Admin
-password=Hum@nhrm123
-
-2. click on PIM option
-3. from the table select Any  value of id and click the check box associated with it
-
-make sure that ur code is dynamic i.e
-changing the id doesnt effect the logic or xpath*/
-public class task1 {
+public class Task2 {
     public static void main(String[] args) {
 
 
@@ -35,16 +24,20 @@ public class task1 {
         WebElement loginButton = driver.findElement(By.id("btnLogin"));
         loginButton.click();
         driver.findElement(By.linkText("PIM")).click();
-        List<WebElement> column = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]"));
-
+        driver.findElement(By.xpath("//input[@id='btnLogin']")).click();
+        driver.findElement(By.xpath("//b[text()='PIM']")).click();
+        List<WebElement> column=driver.findElements(By.xpath("//table[@class='table hover']/tbody/tr/td[2]"));
         for (int i = 0; i < column.size(); i++) {
-            String text = column.get(i).getText();
-            if (text.equalsIgnoreCase("51852A")) {
-                System.out.println(text);
-                System.out.println("51852A is at row no"+(i+1));;
-                driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr["+(i+1)+"]/td[1]")).click();
-
+            String text=column.get(i).getText();
+            if(text.equalsIgnoreCase("52328A")){
+                System.out.println("id index in the list is "+i);
+                System.out.println("id index is in the table is "+(i+1));
+                driver.findElement(By.xpath("//table[@class='table hover']/tbody/tr["+(i+1)+"]/td[1]")).click();
             }
         }
+
+
+
+
     }
 }
