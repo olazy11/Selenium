@@ -33,9 +33,7 @@ public class Task1 {
         driver.findElement(By.xpath("//button[@id='display-other-button']")).click();
         WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement button = wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='hidden']")));
-        System.out.println("Button is enabled: "+button.isEnabled());
-
-
+        System.out.println("Button is enabled : "+button.isEnabled());
 
         driver.findElement(By.xpath("//button[@id='enable-button']")).click();
         WebDriverWait wait4=new WebDriverWait(driver,Duration.ofSeconds(20));
