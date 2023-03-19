@@ -35,10 +35,10 @@ public class task1 {
         WebElement loginButton = driver.findElement(By.id("btnLogin"));
         loginButton.click();
         driver.findElement(By.linkText("PIM")).click();
-        List<WebElement> column = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]"));
+        List<WebElement> id = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]"));
 
-        for (int i = 0; i < column.size(); i++) {
-            String text = column.get(i).getText();
+        for (int i = 0; i < id.size(); i++) {
+            String text = id.get(i).getText();
             if (text.equalsIgnoreCase("51852A")) {
                 System.out.println(text);
                 System.out.println("51852A is at row no"+(i+1));;
